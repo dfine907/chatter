@@ -1,5 +1,12 @@
+import Post from './components/Post'
+
 function App() {
-  return <h1>Hello World!</h1>;
+  return (
+    <main>
+      <Post author="Kiki" body="React is awesome"/>
+      <Post author="Max" body="I love JavaScript" />
+    </main>
+  )
 }
 
-export default App;
+export default App

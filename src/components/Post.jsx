@@ -1,8 +1,12 @@
-import React from 'react'
+import classes from'./Post.module.css'
 
-function Post() {
+function Post(props) {
+  
   return (
-    <div>Post</div>
+    <div className={classes.post}> 
+    <p className={classes.author}>{props.author} says:</p>
+    <p className={classes.text}>{props.body}</p>
+    </div>
   )
 }
 
