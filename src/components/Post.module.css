@@ -3,14 +3,14 @@
     padding: 1rem;
     background-color: #9c7eee;
     border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
     animation: animate-in 1s ease-out forwards;
   }
   
   .author {
     font-size: 0.8rem;
     font-weight: bold;
-    color: #543280;
+    color: #412468;
     margin: 0;
     text-transform: uppercase;
   }
@@ -26,7 +26,7 @@
   @keyframes animate-in {
     from {
       opacity: 0;
-      transform: translateY(1rem);
+      transform: translateY(2rem);
     }
     to {
       opacity: 1;
