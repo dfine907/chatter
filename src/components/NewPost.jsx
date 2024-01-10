@@ -1,11 +1,6 @@
 import classes from './NewPost.module.css'
 
-const NewPost = () => {
-  let enteredBody = ''
-
-  function changeBodyHandler(event) {
-    enteredBody = event.target.value
-  }
+const NewPost = (props) => {
 
   return (
     <form className={classes.form}>
@@ -15,13 +10,13 @@ const NewPost = () => {
           id="body"
           required
           rows={3}
-          onChange={changeBodyHandler}
+          onChange={props.onDataChange}
         />
       </p>
-      <p>{enteredBody}</p>
+    
       <p>
         <label htmlFor="name">Your name</label>
-        <input type="text" id="name" required />
+        <input type="text" id="name" required onChange={props.onAuthorChange} />
       </p>
     </form>
   )
