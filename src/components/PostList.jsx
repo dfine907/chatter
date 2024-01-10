@@ -1,18 +1,17 @@
 import React from 'react'
 import Post from './Post'
 import classes from './PostsList.module.css'
+import NewPost from './NewPost'
 
 const PostsList = () => {
-    
   return (
-    <div>
+    <>
+      <NewPost />
       <ul className={classes.posts}>
-        <Post author="Kiki" body="React is awesome" />
-        <Post author="Max" body="I love JavaScript" />
-        <Post author="Sam" body="Python is way awesome" />
-        <Post author="Max" body="Not" />
+        <Post author="Kiki" body="Today is the best" />
+        <Post author="Sam" body="Moose like to eat pumpkins" />
       </ul>
-    </div>
+    </>
   )
 }
 
