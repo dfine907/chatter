@@ -1,7 +1,6 @@
 import classes from './NewPost.module.css'
 
 const NewPost = (props) => {
-
   return (
     <form className={classes.form}>
       <p>
@@ -13,10 +12,15 @@ const NewPost = (props) => {
           onChange={props.onDataChange}
         />
       </p>
-    
+
       <p>
         <label htmlFor="name">Your name</label>
-        <input type="text" id="name" required onChange={props.onAuthorChange} />
+        <input
+          type="text"
+          id="name"
+          required
+          onChange={props.onAuthorChange}
+        />
       </p>
     </form>
   )
