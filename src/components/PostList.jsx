@@ -23,6 +23,7 @@ const PostsList = ( {isPosting, onStopPosting}) => {
           <NewPost
             onDataChange={dataChangeHandler}
             onAuthorChange={authorChangeHandler}
+            onCancel={onStopPosting}
           />
         </Modal>
       )}

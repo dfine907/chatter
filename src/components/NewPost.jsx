@@ -1,6 +1,6 @@
 import classes from './NewPost.module.css'
 
-const NewPost = (props) => {
+const NewPost = (onDataChange, onAuthorChange, onCancel) => {
   return (
     <form className={classes.form}>
       <p>
@@ -9,7 +9,7 @@ const NewPost = (props) => {
           id="body"
           required
           rows={3}
-          onChange={props.onDataChange}
+          onChange={onDataChange}
         />
       </p>
 
@@ -19,8 +19,12 @@ const NewPost = (props) => {
           type="text"
           id="name"
           required
-          onChange={props.onAuthorChange}
+          onChange={onAuthorChange}
         />
+      </p>
+      <p className={classes.actions}>
+        <button type='button'onClick={onCancel} >Cancel</button>
+        <button>Submit</button>
       </p>
     </form>
   )
