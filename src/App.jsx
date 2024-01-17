@@ -6,12 +6,12 @@ import MainHeader from './components/MainHeader'
 function App() {
   const [modalIsVisible, setmodalIsVisible] = useState(false)
 
-  function hideModalHandler() {
-    setmodalIsVisible(false)
-  }
-
   function showModalHandler() {
     setmodalIsVisible(true)
+  }
+
+  function hideModalHandler() {
+    setmodalIsVisible(false)
   }
 
   return (

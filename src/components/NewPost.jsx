@@ -1,15 +1,41 @@
+import { useState } from 'react'
+
 import classes from './NewPost.module.css'
 
-const NewPost = (onDataChange, onAuthorChange, onCancel) => {
+const NewPost = ({ onCancel }) => {
+  const [enteredData, setEnteredData] = useState('')
+  const [enteredAuthor, setEnteredAuthor] = useState('')
+
+  function dataChangeHandler(event) {
+    // event.stopPropagation() 
+    setEnteredData(event.target.value)
+  }
+
+  function authorChangeHandler(event) {
+    // event.stopPropagation() 
+    setEnteredAuthor(event.target.value)
+  }
+
+  function submitHandler(event) {
+    event.preventDefault()
+    const postData = {
+      data: enteredData,
+      author: enteredAuthor,
+    }
+    console.log(postData)
+    onCancel()
+
+  }
+
   return (
-    <form className={classes.form}>
+    <form className={classes.form} onSubmit={submitHandler}>
       <p>
         <label htmlFor="body">Text</label>
         <textarea
           id="body"
           required
           rows={3}
-          onChange={onDataChange}
+          onChange={dataChangeHandler}
         />
       </p>
 
@@ -19,11 +45,13 @@ const NewPost = (onDataChange, onAuthorChange, onCancel) => {
           type="text"
           id="name"
           required
-          onChange={onAuthorChange}
+          onChange={authorChangeHandler}
         />
       </p>
       <p className={classes.actions}>
-        <button type='button'onClick={onCancel} >Cancel</button>
+        <button type="button" onClick={onCancel}>
+          Cancel
+        </button>
         <button>Submit</button>
       </p>
     </form>
