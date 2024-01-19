@@ -23,6 +23,7 @@ const NewPost = ({ onCancel }) => {
       author: enteredAuthor,
     }
     console.log(postData)
+    // onCancel() added this
     onCancel()
 
   }
