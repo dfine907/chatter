@@ -2,17 +2,15 @@ import { useState } from 'react'
 
 import classes from './NewPost.module.css'
 
-const NewPost = ({ onCancel }) => {
+const NewPost = ({ onCancel, onAddPost }) => {
   const [enteredData, setEnteredData] = useState('')
   const [enteredAuthor, setEnteredAuthor] = useState('')
 
   function dataChangeHandler(event) {
-    // event.stopPropagation() 
     setEnteredData(event.target.value)
   }
 
   function authorChangeHandler(event) {
-    // event.stopPropagation() 
     setEnteredAuthor(event.target.value)
   }
 
@@ -22,10 +20,11 @@ const NewPost = ({ onCancel }) => {
       data: enteredData,
       author: enteredAuthor,
     }
-    console.log(postData)
-    // onCancel() added this
-    onCancel()
 
+    console.log(postData)
+    onAddPost(postData)
+
+    onCancel()
   }
 
   return (
