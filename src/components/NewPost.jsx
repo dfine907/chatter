@@ -2,12 +2,12 @@ import { useState } from 'react'
 
 import classes from './NewPost.module.css'
 
-const NewPost = ({ onCancel, onAddPost }) => {
-  const [enteredData, setEnteredData] = useState('')
+function NewPost({ onCancel, onAddPost }) {
+  const [enteredBody, setEnteredBody] = useState('')
   const [enteredAuthor, setEnteredAuthor] = useState('')
 
-  function dataChangeHandler(event) {
-    setEnteredData(event.target.value)
+  function bodyChangeHandler(event) {
+    setEnteredBody(event.target.value)
   }
 
   function authorChangeHandler(event) {
@@ -17,13 +17,10 @@ const NewPost = ({ onCancel, onAddPost }) => {
   function submitHandler(event) {
     event.preventDefault()
     const postData = {
-      data: enteredData,
+      body: enteredBody,
       author: enteredAuthor,
     }
-
-    console.log(postData)
     onAddPost(postData)
-
     onCancel()
   }
 
@@ -35,10 +32,9 @@ const NewPost = ({ onCancel, onAddPost }) => {
           id="body"
           required
           rows={3}
-          onChange={dataChangeHandler}
+          onChange={bodyChangeHandler}
         />
       </p>
-
       <p>
         <label htmlFor="name">Your name</label>
         <input
